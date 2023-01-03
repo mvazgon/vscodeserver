@@ -15,14 +15,17 @@ Para arrancar el servicio en un contenedor hemos decidido realizar los siguiente
 2. en el contenedor establecemos que: el servicio corra en segundo plano, que se vincule el puerto del contenedor al mismo puerto del host, establecemos un password de accceso "hardcodeado", y el nombre del contenedor relacionado con el de la imagen
 ## TODO
 Estableceremos varias cuestiones:
-1. los certificados serán: un wildcard de FQDN, firmados por una entidad externa y tendrán una validez de al menos 3 meses(let's encrypt)
-2. el password será generado al vuelo y comunicado al usuario via correo electrónico
-3. el puerto del host será calculado y se enviará al usuario via correo elecrónico la URL de acceso
-4. Crear los objetos de Kubernetes para desplegar este componente:
+1. los certificados serán: 
+   1. un wildcard de FQDN, firmados por una entidad externa y tendrán una validez de al menos 3 meses(let's encrypt)
+   2. uno autofirmado. 
+2. Enviar información al usuario para que conozca, se hará via email (autenticado o no):
+   1. el password será generado al vuelo y comunicado al usuario via correo electrónico
+   2. el puerto del host será calculado y se enviará al usuario via correo elecrónico la URL de acceso.
+3. Crear los objetos de Kubernetes para desplegar este componente:
    1. se debe de crear un pod/deploy por cada instancia de usuario
    2. se debe de crear un svc por cada uno de los deploy
    3. se debe de crear un objeto ingress asociado a cada svc
-5. Crear los TF necesarios para desplegar y hacer accesible una máquina virtual en cada uno de los principales proveedores de cloud:
+4. Crear los TF necesarios para desplegar y hacer accesible una máquina virtual en cada uno de los principales proveedores de cloud:
    1. AWS, 
    2. Azure, 
    3. GCP
