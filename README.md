@@ -18,3 +18,11 @@ Estableceremos varias cuestiones:
 1. los certificados serán: un wildcard de FQDN, firmados por una entidad externa y tendrán una validez de al menos 3 meses(let's encrypt)
 2. el password será generado al vuelo y comunicado al usuario via correo electrónico
 3. el puerto del host será calculado y se enviará al usuario via correo elecrónico la URL de acceso
+4. Crear los objetos de Kubernetes para desplegar este componente:
+   1. se debe de crear un pod/deploy por cada instancia de usuario
+   2. se debe de crear un svc por cada uno de los deploy
+   3. se debe de crear un objeto ingress asociado a cada svc
+5. Crear los TF necesarios para desplegar y hacer accesible una máquina virtual en cada uno de los principales proveedores de cloud:
+   1. AWS, 
+   2. Azure, 
+   3. GCP
