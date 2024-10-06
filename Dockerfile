@@ -12,5 +12,5 @@ RUN adduser --quiet user01 && \
 
 USER user01
 WORKDIR /home/user01
-ENV PASSWORD= Asurb4n1p4l.vscode
+ENV PASSWORD="Asurb4n1p4l.vscode"
 CMD /usr/bin/code-server --cert --auth password --password $PASSWORD --bind-addr 0.0.0.0:8080
